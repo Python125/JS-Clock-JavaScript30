@@ -3,23 +3,22 @@ html {
   background-size: cover;
   font-family: "helvetica neue";
   text-align: center;
-  font-size: 10px;
+  display: flex;
+  margin-left: 35%;
 }
 
 body {
   margin: 0;
   font-size: 2rem;
-  display: flex;
-  flex: 1;
   min-height: 100vh;
   align-items: center;
 }
 
-.clock {
+.analog-clock {
   background-image: url(/assets/clock.png);
   background-size: contain;
-  width: 30rem;
-  height: 30rem;
+  width: 40rem;
+  height: 40rem;
   border: 20px solid black;
   border-radius: 50%;
   margin: 50px auto;
@@ -27,11 +26,11 @@ body {
   padding: 2rem;
 }
 
-.clock-face {
+.analog-clock-face {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translateY(-3px); /* account for the height of the clock hands */
+  transform: translateY(-3px);
 }
 
 .second-hand {
@@ -49,7 +48,7 @@ body {
 
 .min-hand {
   width: 40%;
-  height: 10px;
+  height: 12px;
   background: black;
   position: absolute;
   top: 49%;
@@ -62,7 +61,7 @@ body {
 
 .hour-hand {
   width: 30%;
-  height: 10px;
+  height: 12px;
   background: black;
   position: absolute;
   top: 49%;
@@ -75,5 +74,9 @@ body {
 
 .dot {
   height: 25px;
-  margin-top: 46%;
+  margin-top: 48%;
+}
+
+.digital-clock {
+  display: flex;
 }
