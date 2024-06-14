@@ -24,9 +24,50 @@ setAnalogTime();
 
 // Digital Clock
 function setDigitalTime() {
-  const digitalTime = new Date();
-  const hours = digitalTime.getHours();
-  const minutes = digitalTime.getMinutes();
-  const seconds = digitalTime.getSeconds();
-  //let period = "AM";
+  let digitalTime = new Date();
+  let hours = digitalTime.getHours();
+  let minutes = digitalTime.getMinutes();
+  let seconds = digitalTime.getSeconds();
+  let period = "AM";
+
+  if (hours == 0) {
+    hours = 12;
+  }
+
+  if (hours > 12) {
+    hours = hours - 12;
+    period = "PM";
+  }
+  
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+  /*
+  if (hours < 10) {
+    hours = "0" + hours;
+  } else {
+    hours = hours;
+  }
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  } else {
+    minutes = minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  } else {
+    seconds = seconds;
+  }
+  */
+
+  let time = hours + ":" + minutes + ":" + seconds + " " + period;
+  document.getElementById("digital-clock").innerText = time;
+  document.getElementById("digital-clock").textContent = time;
+
+  setTimeout(setDigitalTime, 1000);
 }
+
+setDigitalTime();
